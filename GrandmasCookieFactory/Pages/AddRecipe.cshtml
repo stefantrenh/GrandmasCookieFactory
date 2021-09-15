@@ -1,0 +1,22 @@
+﻿@page
+@model GrandmasCookieFactory.Pages.AddRecipeModel
+@{
+}
+
+<form method="post">
+    <label for="name">Name: </label>
+    <input type="text" id="name" asp-for="@Model.RecipeModel.Name" required />
+
+    <label for="popularity">Popularity: </label>
+    <input type="number" id="popularity" asp-for="@Model.RecipeModel.Popularity" />
+
+    <label for="ingredients">Ingredients: </label>
+    <input type="text" id="ingredients" asp-for="@Model.IngredientsModel.Key" />
+
+    <label for="amount">Amount: </label>
+    <input type="text" id="amount" asp-for="@Model.IngredientsModel.Value" />
+
+    <label for="description">Description: </label>
+    <input type="text" id="description" asp-for="@Model.RecipeModel.Description" />
+
+</form>
