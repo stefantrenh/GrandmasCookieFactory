@@ -10,9 +10,12 @@ namespace GrandmasCookieFactory.Pages
 {
     public class AddRecipeModel : PageModel
     {
+        [BindProperty]
         public RecipeModel RecipeModel { get; set; }
+        [BindProperty]
         public IngredientsModel IngredientsModel { get; set; }
-        public Dictionary<string, string> IngrediensList { get; set; }
+        [BindProperty]
+        public Dictionary<string, string> IngredientsList { get; set; } = new Dictionary<string, string>();
 
         public void OnGet()
         {
