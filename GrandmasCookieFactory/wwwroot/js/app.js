@@ -24,13 +24,5 @@
                 this.inputs.splice(index, 1)
             },
 
-            addCandidate() {
-                axios
-                    .post('/candidates', {
-                        my_prop_name: JSON.stringify(this.inputs)
-                    })
-                    .then(response => { })
-                    .catch(error => { })
-            }
         }
     })

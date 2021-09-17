@@ -13,5 +13,10 @@ namespace GrandmasCookieFactory.Models
         public Dictionary<string,string> Ingredients { get; set; }
         public int Popularity { get; set; }
         public string Description { get; set; }
+
+        public RecipeModel()
+        {
+            Ingredients = new Dictionary<string, string>();
+        }
     }
 }

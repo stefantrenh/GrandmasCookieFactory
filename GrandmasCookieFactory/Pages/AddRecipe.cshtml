@@ -3,24 +3,42 @@
 @{
 }
 
-<form method="post">
-    <label for="name">Name: </label>
-    <input type="text" id="name" asp-for="@Model.RecipeModel.Name" required />
+<div class="container">
+    <form method="post">
+        <label for="name" class="form-label">Name: </label>
+        <input type="text" id="name" class="form-control" asp-for="@Model.RecipeModel.Name" required />
 
-    <label for="popularity">Popularity: </label>
-    <input type="number" id="popularity" asp-for="@Model.RecipeModel.Popularity" />
-    <div class="form-group" v-for="(input,k) in inputs" :key="k">
-        <input type="text" class="form-control" v-model="input.key" asp-for="@Model.RecipeModel.Ingredients">
-        <input type="text" class="form-control" v-model="input.value" asp-for="@Model.RecipeModel.Ingredients">
+        <label for="popularity" class="form-label">Popularity: </label>
+        <input type="number" id="popularity" class="form-control" asp-for="@Model.RecipeModel.Popularity" required />
+
+        <label for="ingredients" class="form-label">Ingredients: </label>
+        <input type="text" class="form-control" id="ingredients" asp-for="@Model.IngredientsModel.Key" required>
+
+        <label for="amount" class="form-label">Amount: </label>
+        <input type="text" class="form-control" id="amount" asp-for="@Model.IngredientsModel.Value" required>
+
+        <label for="description" class="form-label">Description: </label>
+        <input type="text" id="description" class="form-control" asp-for="@Model.RecipeModel.Description" required />
+
+        <button type="submit" class="btn btn-primary m-2">Submit</button>
+    </form>
+</div>
+
+
+
+<!--
+
+        <div class="form-group" v-for="(input,k) in inputs" :key="k">
+        <input type="text" class="form-control" v-model="input.key" asp-for="">
+        <input type="text" class="form-control" v-model="input.value" asp-for="">
         <span>
             <i class="fas fa-minus-circle" @@click="remove(k)" v-show="k || ( !k && inputs.length > 1)">Remove</i>
             <i class="fas fa-plus-circle" @@click="add(k)" v-show="k == inputs.length-1">Add fields</i>
         </span>
     </div>
+
+
     @*<button @@click="addCandidate">
-        Submit
-    </button>*@
-    <label for="description">Description: </label>
-    <input type="text" id="description" asp-for="@Model.RecipeModel.Description" />
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+            Submit
+        </button>*@
+-->

@@ -4,9 +4,33 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+
+@if (Model.ListOfRecipes.Any())
+{
+    <div class="row">
+        @foreach (var recipe in Model.ListOfRecipes)
+        { 
+        <div class="col-lg-4 ">
+            <div class="card m-2" style="width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title"> @recipe.Name </h4>
+
+                    @foreach (var ingredient in recipe.Ingredients)
+                    {
+                        <h6 class="card-text">Ingredient: @ingredient.Key</h6>
+                        <h6 class="card-text">Amount: @ingredient.Value</h6>
+                    }
+                    <h6 class="card-text">Description: @recipe.Description</h6>
+                    <h6 class="card-link">Rating: @recipe.Popularity</h6>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+}
+
 </div>
+
 
 <a asp-page="/AddRecipe" class="btn btn-success">Add Recipe</a>

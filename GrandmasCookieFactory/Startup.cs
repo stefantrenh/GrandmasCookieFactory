@@ -24,6 +24,7 @@ namespace GrandmasCookieFactory
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddSession(options => options.Cookie.MaxAge = TimeSpan.FromDays(7));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +45,7 @@ namespace GrandmasCookieFactory
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 
