@@ -16,8 +16,7 @@ namespace GrandmasCookieFactory.Pages
         [BindProperty]
         public RecipeModel RecipeModel { get; set; } 
         [BindProperty]
-        public IngredientsModel IngredientsModel { get; set; }  
-
+        public IngredientsModel IngredientsModel { get; set; }
         public static List<RecipeModel> ListOfRecipes { get; set; } = new List<RecipeModel>();
 
         public void OnGet()

@@ -9,7 +9,7 @@
 
         },
         mounted() {
-            
+            console.log(this.inputs);
         },
         methods: {
             add() {

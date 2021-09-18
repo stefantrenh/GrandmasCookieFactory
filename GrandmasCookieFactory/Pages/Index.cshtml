@@ -6,6 +6,10 @@
 
 <div class="container">
 
+    <div v-for="ingredients in inputs">
+        {{ingredients.key}} {{ingredients.value}}
+    </div>
+
 @if (Model.ListOfRecipes.Any())
 {
     <div class="row">
